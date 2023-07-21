@@ -1,6 +1,6 @@
 <?php
 
-namespace niklasravnsborg\LaravelPdf\Facades;
+namespace misterspelik\LaravelPdf\Facades;
 
 use Illuminate\Support\Facades\Facade as BaseFacade;
 
@@ -11,5 +11,8 @@ class Pdf extends BaseFacade {
 	 *
 	 * @return string
 	 */
-	protected static function getFacadeAccessor() { return 'mpdf.wrapper'; }
+	protected static function getFacadeAccessor()
+    {
+        return 'mpdf.wrapper';
+    }
 }

@@ -18,14 +18,14 @@ To start using Laravel, add the Service Provider and the Facade to your `config/
 ```php
 'providers' => [
 	// ...
-	niklasravnsborg\LaravelPdf\PdfServiceProvider::class
+	misterspelik\LaravelPdf\PdfServiceProvider::class
 ]
 ```
 
 ```php
 'aliases' => [
 	// ...
-	'PDF' => niklasravnsborg\LaravelPdf\Facades\Pdf::class
+	'PDF' => misterspelik\LaravelPdf\Facades\Pdf::class
 ]
 ```
 

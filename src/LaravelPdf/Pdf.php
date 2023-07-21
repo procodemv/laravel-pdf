@@ -1,6 +1,6 @@
 <?php
 
-namespace niklasravnsborg\LaravelPdf;
+namespace misterspelik\LaravelPdf;
 
 use Config;
 use Mpdf;
@@ -69,10 +69,10 @@ class Pdf {
 	protected function getConfig($key)
 	{
 		if (isset($this->config[$key])) {
-			return $this->config[$key];
-		} else {
-			return Config::get('pdf.' . $key);
-		}
+            return $this->config[$key];
+        }
+
+		return Config::get('pdf.' . $key);
 	}
 
 	protected function addCustomFontsConfig($mpdf_config)
@@ -106,7 +106,12 @@ class Pdf {
 		if (func_get_args()[2] === NULL) {
 			$ownerPassword = bin2hex(openssl_random_pseudo_bytes(8));
 		};
-		return $this->mpdf->SetProtection($permisson, $userPassword, $ownerPassword);
+
+		return $this->mpdf->SetProtection(
+            $permisson,
+            $userPassword,
+            $ownerPassword
+        );
 	}
 
 	/**

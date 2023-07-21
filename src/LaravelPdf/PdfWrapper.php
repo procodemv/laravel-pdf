@@ -1,12 +1,12 @@
 <?php
 
-namespace niklasravnsborg\LaravelPdf;
+namespace misterspelik\LaravelPdf;
 
 use File;
 use View;
 
-class PdfWrapper {
-
+class PdfWrapper
+{
 	/**
 	 * Load a HTML string
 	 *
@@ -41,5 +41,4 @@ class PdfWrapper {
 	{
 		return new Pdf(View::make($view, $data, $mergeData)->render(), $config);
 	}
-
 }

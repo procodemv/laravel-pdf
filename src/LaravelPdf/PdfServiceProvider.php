@@ -1,12 +1,12 @@
 <?php
 
-namespace niklasravnsborg\LaravelPdf;
+namespace misterspelik\LaravelPdf;
 
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
-class PdfServiceProvider extends BaseServiceProvider {
-
+class PdfServiceProvider extends BaseServiceProvider
+{
 	/**
 	 * Indicates if loading of the provider is deferred.
 	 *
@@ -14,18 +14,17 @@ class PdfServiceProvider extends BaseServiceProvider {
 	 */
 	protected $defer = false;
 
-
-	/*
-	* Bootstrap the application service
-	*
-	* @return void
-	*/
+	/**
+	 * Bootstrap the application service
+	 *
+	 * @return void
+	 */
 	public function boot()
 	{
-		$this->publishes([
-            	__DIR__ . '/../config/pdf.php' => config_path('pdf.php'),
-        	]);
-    	}
+        $this->publishes([
+            __DIR__ . '/../config/pdf.php' => config_path('pdf.php'),
+        ]);
+    }
 	
 	/**
 	 * Register the service provider.
@@ -50,7 +49,8 @@ class PdfServiceProvider extends BaseServiceProvider {
 	 */
 	public function provides()
 	{
-		return array('mpdf.pdf');
+		return [
+            'mpdf.pdf'
+        ];
 	}
-
 }
