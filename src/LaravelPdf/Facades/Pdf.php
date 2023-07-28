@@ -2,10 +2,10 @@
 
 namespace misterspelik\LaravelPdf\Facades;
 
-use Illuminate\Support\Facades\Facade as BaseFacade;
+use Illuminate\Support\Facades\Facade;
 
-class Pdf extends BaseFacade {
-
+class Pdf extends Facade
+{
 	/**
 	 * Get the registered name of the component.
 	 *
