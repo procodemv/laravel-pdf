@@ -21,7 +21,7 @@ To start using Laravel, add the Service Provider and the Facade to your `config/
 ```php
 'providers' => [
 	// ...
-	misterspelik\LaravelPdf\PdfServiceProvider::class
+	misterspelik\LaravelPdf\Providers\PdfServiceProvider::class
 ]
 ```
 
@@ -74,7 +74,7 @@ return [
 	'subject'          => 'This Document will explain the whole universe.',
 	'keywords'         => 'PDF, Laravel, Package, Peace', // Separate values with comma
 	'creator'          => 'Laravel Pdf',
-	'display_mode'     => 'fullpage'
+	'display_mode'     => 'fullpage',
 ];
 ```
 
@@ -163,9 +163,8 @@ You can use your own styles in the generated PDFs. The css file have to be locat
 
 ```php
 return [
-	...
-    	'defaultCssFile' => base_path('public/css/pdf.css'),
-    	...
+	//...
+    'defaultCssFile' => base_path('public/css/pdf.css'),
 ];
 ```
 
@@ -180,17 +179,35 @@ There are a fews permissions: `'copy'`, `'print'`, `'modify'`, `'annot-forms'`, 
 ```php
 use PDF;
 
-function generate_pdf() {
+function generate_pdf()
+{
 	$data = [
 		'foo' => 'bar'
 	];
 	$pdf = PDF::loadView('pdf.document', $data);
 	$pdf->SetProtection(['copy', 'print'], '', 'pass');
+
 	return $pdf->stream('document.pdf');
 }
 ```
 
 Find more information to `SetProtection()` here: https://mpdf.github.io/reference/mpdf-functions/setprotection.html
+
+## PDF Wrapper extension
+
+This package has own wrapper for the Mpdf\Mpdf class. But it can be also overrided or extended on the project level.
+
+There is a setting in the config file to use a custom PdfWrapper.
+
+```php
+return [
+    // ...
+    'pdfWrapper' => 'misterspelik\LaravelPdf\Wrapper\PdfWrapper',
+];
+```
+
+The only requirement that the wrapper must implement the interface
+`misterspelik\LaravelPdf\PdfInterface\PdfWrapperInterface`
 
 ## Testing
 

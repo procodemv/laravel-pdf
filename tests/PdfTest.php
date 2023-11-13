@@ -40,7 +40,6 @@ class PdfTest extends PdfTestCase
 		// create snapshot if it doesn't exist
 		if (!file_exists($snapshotFile)) {
 			file_put_contents($snapshotFile, $data);
-			return;
 		}
 
 		$snapshot = file_get_contents($snapshotFile);

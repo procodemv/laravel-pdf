@@ -4,7 +4,7 @@ namespace misterspelik\LaravelPdf\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use misterspelik\LaravelPdf\LaravelPdfFactory;
-use misterspelik\LaravelPdf\Wrapper\PdfWrapper;
+use misterspelik\LaravelPdf\Wrapper\PdfWrapperInterface;
 
 class PdfServiceProvider extends ServiceProvider
 {
@@ -56,8 +56,8 @@ class PdfServiceProvider extends ServiceProvider
             __DIR__ . '/../../config/pdf.php', 'pdf'
         );
 
-        $this->app->bind('mpdf.wrapper', function($app) {
-            return $this->factory->createPdfWrapper();
+        $this->app->bind('mpdf.wrapper', function ($app) {
+            return $this->getPdfWrapper();
         });
     }
 
@@ -71,5 +71,13 @@ class PdfServiceProvider extends ServiceProvider
         return [
             'mpdf.pdf'
         ];
+    }
+
+    /**
+     * @return \misterspelik\LaravelPdf\Wrapper\PdfWrapperInterface
+     */
+    protected function getPdfWrapper(): PdfWrapperInterface
+    {
+        return $this->factory->createPdfWrapper();
     }
 }
