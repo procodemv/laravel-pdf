@@ -1,3 +1,11 @@
+[![Stable Version](https://poser.pugx.org/misterspelik/laravel-pdf/v/stable)](https://packagist.org/packages/misterspelik/laravel-pdf)
+[![Unstable Version](https://poser.pugx.org/misterspelik/laravel-pdf/v/unstable)](https://packagist.org/packages/misterspelik/laravel-pdf)
+[![License](https://poser.pugx.org/misterspelik/laravel-pdf/license)](https://packagist.org/packages/misterspelik/laravel-pdf)
+[![Total Downloads](https://poser.pugx.org/misterspelik/laravel-pdf/downloads)](https://packagist.org/packages/misterspelik/laravel-pdf)
+[![Monthly Downloads](https://poser.pugx.org/misterspelik/laravel-pdf/d/monthly)](https://packagist.org/packages/misterspelik/laravel-pdf)
+[![Daily Downloads](https://poser.pugx.org/misterspelik/laravel-pdf/d/daily)](https://packagist.org/packages/misterspelik/laravel-pdf)
+
+
 # Laravel PDF: mPDF wrapper for Laravel
 
 > Easily generate PDF documents from HTML right inside of Laravel using this mPDF wrapper.
