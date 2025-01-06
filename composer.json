@@ -3,15 +3,20 @@
     "description": "Generate PDFs in Laravel with this mPDF wrapper.",
     "keywords": ["mpdf", "pdf", "laravel"],
     "license": "MIT",
-    "scripts": {
-        "test": "phpunit --colors=always"
-    },
+    "homepage": "https://github.com/misterspelik/laravel-pdf",
+    "authors": [
+        {
+            "name": "Yaroslav Krutikov",
+            "email": "misterspelik@gmail.com",
+            "homepage": "https://github.com/misterspelik"
+        }
+    ],
     "require": {
         "php": "^7.4 || ^8.0",
         "ext-gd": "*",
         "ext-imagick": "*",
         "ext-mbstring": "*",
-        "misterspelik/mpdf": "^8.1.6",
+        "misterspelik/mpdf": "^8.1.8",
         "psr/http-message": "^1.1 || ^2.0",
         "psr/log": "^1.1.0 || ^2.0.0 || ^3.0.0"
     },
@@ -30,7 +35,7 @@
         }
     },
     "scripts": {
-       "test": "vendor/bin/phpunit"
+       "test": "vendor/bin/phpunit --colors=always"
     },
     "extra": {
         "laravel": {
